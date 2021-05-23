@@ -93,6 +93,9 @@ input {
 	text-align: center;
 }
 
+textarea {
+	background-color: #eee;
+}
 
 .container {
 	background-color: #fff;
