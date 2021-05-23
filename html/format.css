@@ -17,6 +17,13 @@ body {
 h1 {
 	font-weight: bold;
 	margin: 0;
+	text-align: center;
+}
+
+h2 {
+	font-weight: bold;
+	margin: 0;
+	text-align: center;
 }
 
 
@@ -110,8 +117,8 @@ input {
 .overlay-container {
 	position: absolute;
 	top: 0;
-	left: 50%;
-	width: 50%;
+	left: 100%;
+	width: 100%;
 	height: 100%;
 }
 
@@ -191,4 +198,8 @@ input {
 
 .active {
   background-color: #04AA6D;
+}
+
+.aboutstyle {
+  background: linear-gradient(to right, #ffa899, #ff99b1);
 }
