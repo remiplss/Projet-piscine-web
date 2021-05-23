@@ -1,30 +1,57 @@
 <?php
-$login = isset($_POST["identifiant"]) ? $_POST["identifiant"] : "";
-$pass = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
-$users = array("toto" => "totomdp", "titi" => "titimdp", "tutu" => "123tutu123");
-$found = false;
-foreach ($users as $key => $value) {
-  if ($key == $login) {
-    $found = true;
-    break;
-  }
+
+$database = "projet web";
+
+$db_handle = mysqli_connect('localhost', 'root', '');
+$db_found = mysqli_select_db($db_handle, $database);
+
+$Type = 'acheteur';
+$Login = isset($_POST["login"]) ? $_POST["login"] : "";
+$MotDePasse = isset($_POST["password"]) ? $_POST["password"] : "";
+
+if ($Login == "") {
+
+    echo "<script>alert(\"login vide\")</script>";
+    header('Location: compte.html');
 }
-$connexion = false;
-if ($found) {
-  for ($i = 0; $i < count($users); $i++) {
-    if ($users[$login] == $pass) {
-      $connexion = true;
-      break;
+
+if ($MotDePasse == "") {
+
+    echo "<script>alert(\"mot de passe vide\")</script>";
+    header('Location: compte.html');
+
+
+} 
+
+elseif ($db_found) {
+
+    $sql = "SELECT count(*) ID FROM utilisateur WHERE Password = '$MotDePasse' AND ( Pseudo='$Login' OR Email='$Login')";
+    $result = mysqli_query($db_handle, $sql) ;
+    
+    
+   
+
+    if (!mysqli_query($db_handle, $sql)) {
+        die('erreur requete: ' . mysqli_error($db_handle));
     }
-  }
-}
-if (!$found) {
-  echo "Connexion refusée. Utilisateur inconnu.";
+
+     $rows = mysqli_num_rows($result);
+ 
+     if($rows == 1){
+       
+        $_SESSION['Pseudo'] = $pseudo;
+        header('Location: Page d\'accueil.html');
+    }else{
+      $message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
+    }
+
+   
 } else {
-  if ($connexion) {
-    echo "Connexion okay.";
-  } else {
-    echo "Connexion refusée. Mot de passe invalide.";
-  }
+    echo "<br>Database not found";
 }
+
+
+
+
+mysqli_close($db_handle);
 ?>
