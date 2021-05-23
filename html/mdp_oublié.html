@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="mdp.css">
-    <meta charset="utf-8">
-    <title>Mot de passe oublié</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="compte.css">
 </head>
 <body>
-    <div class="container">
-  <div style="text-align:center">
-    <h2>Contact Us</h2>
-    <p>Swing by for a cup of coffee, or leave us a message:</p>
-  </div>
-  <div class="row">
-    <div class="column">
-      <img src="LOGOprojet.png" style="width:100%">
-    </div>
-    <div class="column">
-      <form action="/action_page.php">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-        <label for="country">Country</label>
-        <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-        <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
-        <input type="submit" value="Submit">
-      </form>
-    </div>
-  </div>
-</div>
+	<img src="LOGOprojet.png" alt="Market place Logo" width="500">
+	<div class="container" id="container">
+        <div class="form-container log-in-container">
+			<form action="#">
+				<h1>Récupération Mot de passe</h1><br>
+				<input type="pseudo" name="pseudo" placeholder="Pseudo" />
+				<input type="mail"  name="mail" placeholder="Mot de Passe" />
+				<button type="submit" name="button_connexion">Se Connecter</button>
+			</form>
+        </div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-right">
+					<h1>Veuillez entrez vos informations pour recevoir votre mot de passe par email.</h1>
+                </div>
+            </div>
+        </div>
+	<footer>
+		<div class="footerstyle">
+			<br>
+            Copyright &copy; 2021 ECE MarketPlace<br>
+            <a href="mailto:ecemarketplace.groupe8@gmail.com">Contact</a>
+        </div>
+    </footer>
 </body>
 </html>
