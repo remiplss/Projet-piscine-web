@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<link rel="stylesheet" type="text/css" href="compte.css">
 </head>
-
 <body>
-
 	<img src="LOGOprojet.png" alt="Market place Logo" width="500">
 	<div class="container" id="container">
-
 		<div class="form-container log-in-container">
-			<form action="#"action="connexion.php" method="post">
-			
-
+			<form action="connexion.php">
 				<h1>Connexion</h1><br>
 				<input type="login" name="login" placeholder="Mail ou Pseudo" />
-				<input type="password" name="password" placeholder="Mot de Passe" />
+				<input type="password"  name="password" placeholder="Mot de Passe" />
 				<a href="#">Mot de passe oublié ?</a>
 				<button type="submit" name="button_connexion">Se Connecter</button>
 			</form>
@@ -24,15 +18,15 @@
 		<div class="overlay-container">
 			<div class="overlay">
 				<div class="overlay-panel overlay-right">
-			
-
-					<h1>Inscription</h1><br>
-					<input type="email" name="mail" placeholder="Mail" />
-					<input type="pseudo" name="pseudo" placeholder="Pseudo" />
-					<input type="password" name="password" placeholder="Mot de Passe" />
-
-					<br><br><br>
-					<button type="submit" name="button_inscription">S'inscrire</button>	
+					<form class="monform" action="inscription.php">	
+						<h1>Inscription</h1><br>
+						<input type="email" name="mail" placeholder="Mail" />
+						<input type="pseudo" name="pseudo" placeholder="Pseudo" />
+						<input type="password" name="password" placeholder="Mot de Passe" />
+						
+						<br><br><br>
+						<button type="submit" name="button_inscription">S'inscrire</button>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -45,5 +39,5 @@
         </div>
     </footer>
 </body>
-
 </html>
+				
