@@ -94,7 +94,8 @@ input {
 }
 
 textarea {
-	background-color: #eee;
+	resize: none;
+	width: 100%;
 }
 
 .container {
