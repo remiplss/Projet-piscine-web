@@ -15,12 +15,54 @@
         <a href="panier.html">Panier</a>
         <a href="compteVendeur.html">Le pseudo</a>
     </div>
+    <div class="principal-box">
     <div class="left-column">
+<<<<<<< Updated upstream
+=======
         <p>Bienvenue: Pseudo</p>
+>>>>>>> Stashed changes
+        <h3>Bienvenue: Pseudo</h3>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            Select image to upload:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload Image" name="submit">
+          </form>
         
         
     </div>
+    <div class="right-column">
+        <form style = "width: 500px; height: 400px; overflow:auto; border: thin #000 solid; padding: 100px;" method ="post" class="info-livraison" action="majInfo.php">	
+						<br><br><br><br><br><br><br><br><br>
+                        <br><br><br><br><br><br><br><br><br>
+                        <br><br><br><br><br><br><br><br><br>
+                        <br><h2>Mettre à jour mes informations</h2><br><br>
+
+						<input type="text" name="nom" placeholder="Nom" />
+						<input type="text" name="prénom" placeholder="Prénom" />
+						<input type="text" name="add1" placeholder="Adresse 1" />
+                        <input type="text" name="add2" placeholder="Adresse 2" />
+                        <input type="text" name="ville" placeholder="Ville" />
+                        <input type="number" name="codePostal" placeholder="Code Postal" />
+						<input type="text" name="pays" placeholder="Pays" />
+                        <input type="tel" name="téléphoen" placeholder="Téléphone" />
+                        <input type="email" name="mail" placeholder="Mail" />
+						<select naem="Type de Payement">
+                            <option value=”Visa”>Visa</option>
+                            <option value=”Mastercard”>Mastercard</option>
+                            <option value=”CB”>CB</option>
+                        </select>
+						<input type="number" name="numCart" placeholder="Numéro de carte" />
+                        <input type="text" name="exp" placeholder="Date d'exp" />
+                        <input type="number" name="ccv" placeholder="CCV" />
+						
+						
+						<br>
+						<button type="submit" name="modif">Enregistrer</button>
+		</form>
         
+        
+    </div>
+    </div>
     <footer>
         <p class="footerstyle">
             <br>
