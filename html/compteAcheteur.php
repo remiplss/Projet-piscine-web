@@ -48,15 +48,15 @@ else{
     </head>
 <body>
     	<header>
-    		<a href="Accueil.php"><img src="images/LOGOprojet.png" alt="Market place Logo" width="500"></a>
+    		<a href="Page d'accueil.php"><img src="LOGOprojet.png" alt="Market place Logo" width="500"></a>
     	</header>
         
         <div class="nav-bar">
-            <a href="Accueil.php">Accueil</a>
+            <a href="Accueil.html">Accueil</a>
             <a href="parcourir.html">Produits</a>
             <a href="notification.html">Notification</a>
             <a href="panier.html">Panier</a>
-            <a href="connexion.html">Connexion</a>
+            <a href="compteAcheteur.php">Mon Compte</a>
         </div>
         
         <div class="col-container">
@@ -68,59 +68,34 @@ else{
             <div class="col">
               <form method="post" action="majInfo.php">
                         <h2>Mettre à jour mes informations</h2>
-                        <input type="text" name="nom" placeholder="Nom" />
-						<input type="text" name="prenom" placeholder="Prénom" /><br><br>
-						<input type="text" name="add1" placeholder="Adresse 1" />
-                        <input type="text" name="add2" placeholder="Adresse 2" /><br><br>
-                        <input type="text" name="ville" placeholder="Ville" />
-                        <input type="number" name="codePostal" placeholder="Code Postal" /><br><br>
-						<input type="text" name="pays" placeholder="Pays" />
-                        <input type="tel" name="telephone" placeholder="Téléphone" /><br><br>
-                        <select name="Type de Payement">
+                        <input type="text" value="<?php echo $_SESSION['Nom'] ?>" name="nom" placeholder="Nom" />
+						<input type="text" value="<?php echo $_SESSION['Prenom'] ?>" name="prenom" placeholder="Prénom" />
+                        <br><br>
+						<input type="text" value="<?php echo $_SESSION['Adresse 1'] ?>" name="add1" placeholder="Adresse 1" />
+                        <input type="text" value="<?php echo $_SESSION['Adresse 2'] ?>" name="add2" placeholder="Adresse 2" />
+                        <br><br>
+                        <input type="text" value="<?php echo $_SESSION['Ville'] ?>" name="ville" placeholder="Ville" />
+                        <input type="number" value="<?php echo $_SESSION['Code_Postale'] ?>" name="codePostal" placeholder="Code Postal" />
+                        <br><br>
+						<input type="text" value="<?php echo $_SESSION['Pays'] ?>" name="pays" placeholder="Pays" />
+                        <input type="tel" value="<?php echo $_SESSION['Telephone'] ?>" name="tel" placeholder="Téléphone" />
+                        <br><br>
+						<select name="Type de Payement" value="<?php echo $_SESSION['Type_Payement'] ?>">
                             <option value=”Visa”>Visa</option>
                             <option value=”Mastercard”>Mastercard</option>
                             <option value=”CB”>CB</option>
-                        </select><br><br>
-						<input type="number" name="numCart" placeholder="Numéro de carte" />
-                        <input type="text" name="exp" placeholder="Date d'exp" />
-                        <input type="number" name="ccv" placeholder="CCV" />
+                        </select>
+                        <br><br>
+						<input type="number" value="<?php echo $_SESSION['Numero_carte'] ?>" name="numCart" placeholder="Numéro de carte" />
+                        <input type="nom_carte" value="<?php echo $_SESSION['Nom_Carte'] ?>" name="nomCart" placeholder="Titulaire de la carte" />
+                        <br><br>
+                        <input type="text" value="<?php echo $_SESSION['Date_expiration'] ?>" name="exp" placeholder="Date d'exp" />
+                        <input type="number" value="<?php echo $_SESSION['Code'] ?>" name="ccv" placeholder="CCV" />
                         <br><br>
 						<button type="submit" name="modif">Enregistrer</button>
               </form>
               
             </div>
-            
-            <div class="col">
-                <h2>Mettre un produit en vente</h2>
-                <form action="venteProduit.php" method="post">
-                <table>
-                    <tr>
-                    <td>Nom du produit:</td><br>
-                        <td><input type="text" name="nom"></td>
-                    </tr>
-                    <tr>
-                        <td>Description:</td><br>
-                        <td><textarea type="text" name="description"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td>Prix d'achat immédiat:</td>
-                        <td><input type="number" name="prixAchatdirect"></td>
-                    </tr>
-                    <tr>
-                        <td>Prix de départ Enchère:</td>
-                        <td><input type="number" name="prixEnchere"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" align="center"><br>
-                    </tr>
-                    
-                </table>
-                <button type="submit" name="button" value="Ajouter">Ajouter</button>
-                </form>
-            </div>
-            
-        
-        
 
             
         </div>

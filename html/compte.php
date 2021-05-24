@@ -2,6 +2,7 @@
 session_start();
 $Id = session_id();
 
+$_SESSION['Connect'] = 0;
 ?>
 
 
@@ -13,7 +14,7 @@ $Id = session_id();
 	<link rel="stylesheet" type="text/css" href="compte.css">
 </head>
 <body>
-	<a href="Page d'accueil.html"><img src="LOGOprojet.png" alt="Market place Logo" width="500"></a>
+	<a href="Page d'accueil.php"><img src="LOGOprojet.png" alt="Market place Logo" width="500"></a>
 
 	<div class="container" id="container">
 

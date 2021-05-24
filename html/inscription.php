@@ -80,3 +80,4 @@ if ($MotDePasse == "") {
 
 
 mysqli_close($db_handle);
+?>

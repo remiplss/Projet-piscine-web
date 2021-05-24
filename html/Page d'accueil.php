@@ -1,6 +1,40 @@
 <?php
+$database = "projet web";
 
-session_start();
+$db_handle = mysqli_connect('localhost', 'root', '');
+$db_found = mysqli_select_db($db_handle, $database);
+
+$Type ='';
+
+    if(session_status() ==  PHP_SESSION_DISABLED) //si aucunes sessions
+    {
+    $testSession = 0;
+    session_start();
+
+    }
+
+    if(session_status() ==  PHP_SESSION_NONE)//si sessions non definis
+    {
+   
+    $testSession = 1;
+    session_start();
+    
+    $test = $_SESSION['ID'];
+
+$sql = "SELECT * FROM utilisateur WHERE ID = '$test'";
+    $result = mysqli_query($db_handle, $sql) ;
+
+    while($data = mysqli_fetch_assoc($result))
+    {
+        $Type = $data['Type'];
+
+
+    }
+    }
+
+     
+
+     $_SESSION['Connect'] = $testSession;
 
 
 
@@ -69,13 +103,37 @@ session_start();
     		<a href="Page d'accueil.php"><img src="LOGOprojet.png" alt="Market place Logo" width="500"></a>
     	</header>
         <div class="nav-bar">
-            <a href="Page d'accueil.html">Accueil</a>
+            <a href="Page d'accueil.php">Accueil</a>
             <a href="parcourir.html">Tout parcourir</a>
             <a href="notification.html">Notification</a>
             <a href="panier.html">Panier</a>
-            <a href="compteVendeur.php">Mon compte</a>
+           <?php 
+           
+           if($_SESSION['Connect'] == 0)
+            {
+                
+                echo '<a href="compte.php">Mon compte</a>';
+                
+            }
+            else
+            {
+                if($Type == "acheteur")
+                
+            {
+                
+                echo '<a href="compteAcheteur.php">Mon compte</a>';
+            }
+            if($Type == "vendeur")
+            {
+                echo '<a href="compteVendeur.php">Mon compte</a>';
+            }
+            if($Type == "admin")
+            {
+                echo '<a href="compteAdmin.php">Mon compte</a>';
+            }
+             }?>
         </div>
-        <div id="carrousel">
+        <div id="carrousel" >
             <ul>
                 <li><img src="test1.jpg" width="700" height="400" /></li>
                 <li><img src="test2.jpg" width="700" height="400" /></li>

@@ -24,3 +24,32 @@
         </footer>
     </body>
 </html>
+
+////////////////////////////////////////////////////////////////////////
+
+            if($_SESSION['Connect'] == 0)
+            {
+                
+                echo '<a href="compte.php">Mon compte</a>';
+                
+            }
+            else
+            {
+                if($Type == "acheteur")
+                
+            {
+                
+                echo '<a href="compteAcheteur.php">Mon compte</a>';
+            }
+            if($Type == "vendeur")
+            {
+                echo '<a href="compteVendeur.php">Mon compte</a>';
+            }
+            if($Type == "admin")
+            {
+                echo '<a href="compteAdmin.php">Mon compte</a>';
+            }
+             }
+            
+
+            

@@ -1,0 +1,83 @@
+* {
+	box-sizing: border-box;
+}
+
+body{
+    background: #f3e0e2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+	height: 100vh;
+	margin: -20px 0 50px;
+}
+
+a {
+	color: #333;
+	font-size: 14px;
+	text-decoration: none;
+	margin: 15px 0;
+}
+
+input {
+    height: 2.5em; /* pour IE */
+    vertical-align: middle; /* optionnel mais donne meilleur aspect pour IE */
+}
+
+button {
+	border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+.col-container {
+    display: table; /* Make the container element behave like a table */
+    width: 100%; /* Set full-width to expand the whole page */
+}
+
+.col {
+    display: table-cell; /* Make elements inside the container behave like table cells */
+}
+
+#footer {
+background-color: none;
+color: black;
+clear: left;
+text-align: center;
+padding: 10px;
+}
+
+
+.nav-bar {
+  width: 100%;
+  background: linear-gradient(to right, #FF4B2B, #FF416C);
+  overflow: auto;
+}
+
+.nav-bar a {
+  float: left;
+  width: 20%;
+  text-align: center;
+  padding: 12px 0;
+  transition: all 0.2s ease;
+  color: white;
+  font-size: 25px;
+}
+
+.nav-bar a:hover {
+  background: linear-gradient(to left, #ffa899, #ff99b1);
+  color: #404040;
+}
+
+
+.footerstyle {
+	text-align: center;
+}
