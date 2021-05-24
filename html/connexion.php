@@ -44,7 +44,7 @@ elseif ($db_found) {
       $message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
       $_SESSION['Connect'] = 0;//session non connecté
     }
-    //on recuppere l'id de l'utilisateur 
+   /* //on recuppere l'id de l'utilisateur 
     $sql1 = "SELECT ID FROM utilisateur WHERE ( Pseudo='$Login' OR Email='$Login')";
     $result1 = mysqli_query($db_handle, $sql1);
     $id =  mysqli_fetch_assoc($result2);
@@ -68,7 +68,7 @@ elseif ($db_found) {
         $_SESSION['Nom_Carte'] = $data['Nom_Carte'];
         $_SESSION['Date_expiration'] = $data['Date_expiration'];
         $_SESSION['Code'] = $data['Code'];
-    }
+    }*/
     
     if (!mysqli_query($db_handle, $sql)) {
         die('erreur requete: ' . mysqli_error($db_handle));

@@ -12,7 +12,8 @@ echo 'Contenu de $_SESSION[\'Pseudo\'] : ' .$_SESSION['Pseudo']. '<br>';
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="compte.css">
+        
+        
         <link rel="stylesheet" type="text/css" href="format.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type="text/javascript">
@@ -65,7 +66,7 @@ echo 'Contenu de $_SESSION[\'Pseudo\'] : ' .$_SESSION['Pseudo']. '<br>';
     </head>
     <body>
     	<header>
-@ -15,13 +63,23 @@
+
             <a href="panier.html">Panier</a>
             <a href="MonCompte.html">Mon compte</a>
         </div>
