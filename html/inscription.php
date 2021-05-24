@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $database = "projet web";
 
 $db_handle = mysqli_connect('localhost', 'root', '');
@@ -9,6 +9,8 @@ $Type = 'acheteur';
 $Pseudo = isset($_POST["pseudo"]) ? $_POST["pseudo"] : "";
 $Email = isset($_POST["mail"]) ? $_POST["mail"] : "";
 $MotDePasse = isset($_POST["password"]) ? $_POST["password"] : "";
+
+$_SESSION['Pseudo'] = $Pseudo;
 
 if ($Pseudo == "") {
 
@@ -40,6 +42,7 @@ if ($MotDePasse == "") {
     //si l'utilisateur n'existe pas
     if (mysqli_num_rows($result1)) {
 
+        $_SESSION['Connect'] = 1; //session connecté
 
         //on créé le compte
         //$_SESSION['Pseudo'] = $Pseudo;
@@ -56,6 +59,7 @@ if ($MotDePasse == "") {
     else{
 
         echo "<script>alert(\"l'utilisateur n'existe pas\")</script>";
+        $_SESSION['Connect'] = 0; //session non connecté
     }
 
 

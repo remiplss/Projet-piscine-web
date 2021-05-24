@@ -1,3 +1,11 @@
+<?php
+session_start();
+$Id = session_id();
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
