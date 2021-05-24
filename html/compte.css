@@ -19,6 +19,26 @@ h1 {
 	margin: 0;
 }
 
+.left-column{
+	background-color: linear-gradient(to right, #FF4B2B, #FF416C);
+	color: black;
+	width: 50%;
+	float: left;
+}
+
+.right-column{
+	background-color: linear-gradient(to right, #FF4B2B, #FF416C);
+		color: #000;
+		width: 50%;
+		float: right;
+}
+.principal-box{
+		background-color: none;
+		color: #fff;
+		width: 100%;
+		margin: 0px auto;
+		padding: 5px;
+}
 
 p {
 	font-size: 14px;
