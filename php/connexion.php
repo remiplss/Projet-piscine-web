@@ -28,9 +28,6 @@ elseif ($db_found) {
     $sql = "SELECT count(*) ID FROM utilisateur WHERE Password = '$MotDePasse' AND ( Pseudo='$Login' OR Email='$Login')";
     $result = mysqli_query($db_handle, $sql) ;
     
-    
-   
-
     if (!mysqli_query($db_handle, $sql)) {
         die('erreur requete: ' . mysqli_error($db_handle));
     }
@@ -39,7 +36,7 @@ elseif ($db_found) {
  
      if($rows == 1){
        
-        $_SESSION['Pseudo'] = $pseudo;
+        $_SESSION['Pseudo'] = $Login;
         header('Location: Page d\'accueil.html');
     }else{
       $message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
