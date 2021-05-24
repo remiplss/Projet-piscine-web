@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-echo 'Contenu de $_SESSION[\'Pseudo\'] : ' .$_SESSION['Pseudo']. '<br>';
+
 
 
 
@@ -11,9 +11,9 @@ echo 'Contenu de $_SESSION[\'Pseudo\'] : ' .$_SESSION['Pseudo']. '<br>';
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        
-        
+        <meta charset="utf-8">        
+        <link rel="stylesheet" type="text/css" href="compte.css">
+=======
         <link rel="stylesheet" type="text/css" href="format.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type="text/javascript">
@@ -66,7 +66,12 @@ echo 'Contenu de $_SESSION[\'Pseudo\'] : ' .$_SESSION['Pseudo']. '<br>';
     </head>
     <body>
     	<header>
-
+    		<a href="Page d'accueil.html"><img src="LOGOprojet.png" alt="Market place Logo" width="500"></a>
+    	</header>
+        <div class="nav-bar">
+            <a href="Page d'accueil.html">Accueil</a>
+            <a href="parcourir.html">Tout parcourir</a>
+            <a href="notification.html">Notification</a>
             <a href="panier.html">Panier</a>
             <a href="MonCompte.html">Mon compte</a>
         </div>
