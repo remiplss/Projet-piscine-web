@@ -66,14 +66,14 @@ session_start();
     </head>
     <body>
     	<header>
-    		<a href="Page d'accueil.html"><img src="LOGOprojet.png" alt="Market place Logo" width="500"></a>
+    		<a href="Page d'accueil.php"><img src="LOGOprojet.png" alt="Market place Logo" width="500"></a>
     	</header>
         <div class="nav-bar">
             <a href="Page d'accueil.html">Accueil</a>
             <a href="parcourir.html">Tout parcourir</a>
             <a href="notification.html">Notification</a>
             <a href="panier.html">Panier</a>
-            <a href="MonCompte.html">Mon compte</a>
+            <a href="compteVendeur.php">Mon compte</a>
         </div>
         <div id="carrousel">
             <ul>
