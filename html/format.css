@@ -18,6 +18,10 @@ h1 {
 	font-weight: bold;
 	margin: 0;
 	text-align: center;
+ color: white;
+ background-color: #666699;
+ font-size: 30px;
+ border-radius: 10px;
 }
 
 h2 {
@@ -121,4 +125,50 @@ input {
 
 .aboutstyle {
   background: linear-gradient(to right, #ffa899, #ff99b1);
+}
+
+#carrousel {
+ position: relative;
+ height: 200px;
+ width: 700px;
+ margin: auto;
+}
+
+#carrousel ul li {
+ position: absolute;
+ top: 0;
+ left: 0;
+ list-style: none;
+}
+
+.next {
+ position: relative;
+ top: 0px;
+ left: 265px;
+ width: 150px;
+ color: white;
+ background: linear-gradient(to right, #FF4B2B, #FF416C);
+ font-size: 20px;
+ border-radius: 6px;
+}
+
+.next:hover {
+  background: linear-gradient(to left, #ffa899, #ff99b1);
+  color: #404040;
+}
+
+.prev {
+ position: relative;
+ top: 64px;
+ right: 265px;
+ width: 150px;
+ color: white;
+ background: linear-gradient(to right, #FF4B2B, #FF416C);
+ font-size: 20px;
+ border-radius: 6px;
+}
+
+.prev:hover {
+  background: linear-gradient(to left, #ffa899, #ff99b1);
+  color: #404040;
 }
