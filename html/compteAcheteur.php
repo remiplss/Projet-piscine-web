@@ -15,6 +15,7 @@ if ($db_found) {
 $sql2 = "SELECT * FROM info_client WHERE ID_User = '$id'";
 $result2 = mysqli_query($db_handle, $sql2) ;
 
+//On rentre les infos dans la super-globale $_SESSION
 while($data = mysqli_fetch_assoc($result2))
 {
     $_SESSION['Nom'] = $data['Nom'];
@@ -52,11 +53,11 @@ else{
     	</header>
         
         <div class="nav-bar">
-            <a href="Accueil.html">Accueil</a>
+            <a href="Page d'accueil.php">Accueil</a>
             <a href="parcourir.html">Produits</a>
             <a href="notification.html">Notification</a>
             <a href="panier.html">Panier</a>
-            <a href="compteAcheteur.php">Mon Compte</a>
+            <a href="deconnexion.php">Se deconnecter</a>
         </div>
         
         <div class="col-container">

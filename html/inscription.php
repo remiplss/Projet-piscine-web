@@ -1,6 +1,8 @@
 <?php
-
+//debut de session
 session_start();
+
+//Connexion a la db
 $database = "projet web";
 
 $db_handle = mysqli_connect('localhost', 'root', '');

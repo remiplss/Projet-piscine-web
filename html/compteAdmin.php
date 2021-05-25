@@ -48,7 +48,7 @@ else{
     </head>
 <body>
     	<header>
-    		<a href="Page d'accueil.php"><img src="images/LOGOprojet.png" alt="Market place Logo" width="500"></a>
+    		<a href="Page d'accueil.php"><img src="LOGOprojet.png" alt="Market place Logo" width="500"></a>
     	</header>
         
         <div class="nav-bar">
@@ -66,27 +66,13 @@ else{
             </div>
           
             <div class="col">
-              <form method="post" action="majInfo.php">
-                        <h2>Mettre à jour mes informations</h2>
-                        <input type="text" name="nom" placeholder="Nom" />
-						<input type="text" name="prenom" placeholder="Prénom" /><br><br>
-						<input type="text" name="add1" placeholder="Adresse 1" />
-                        <input type="text" name="add2" placeholder="Adresse 2" /><br><br>
-                        <input type="text" name="ville" placeholder="Ville" />
-                        <input type="number" name="codePostal" placeholder="Code Postal" /><br><br>
-						<input type="text" name="pays" placeholder="Pays" />
-                        <input type="tel" name="telephone" placeholder="Téléphone" /><br><br>
-                        <select name="Type de Payement">
-                            <option value=”Visa”>Visa</option>
-                            <option value=”Mastercard”>Mastercard</option>
-                            <option value=”CB”>CB</option>
-                        </select><br><br>
-						<input type="number" name="numCart" placeholder="Numéro de carte" />
-                        <input type="text" name="exp" placeholder="Date d'exp" />
-                        <input type="number" name="ccv" placeholder="CCV" />
-                        <br><br>
-						<button type="submit" name="modif">Enregistrer</button>
-              </form>
+              
+                        <h2>Pour effectuer des modications sur les comptes</h2>
+                        <h2>Veuillez cliquez ci-dessous</h2>
+                        
+                        
+						<a href="modification.php"><button  type="submit" name="modif">Modifications</button></a>
+              
               
             </div>
             

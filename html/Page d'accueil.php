@@ -6,35 +6,23 @@ $db_found = mysqli_select_db($db_handle, $database);
 
 $Type ='';
 
-    if(session_status() ==  PHP_SESSION_DISABLED) //si aucunes sessions
-    {
-    $testSession = 0;
-    session_start();
-
-    }
-
-    if(session_status() ==  PHP_SESSION_NONE)//si sessions non definis
-    {
-   
-    $testSession = 1;
     session_start();
     
-    $test = $_SESSION['ID'];
+
+     @ $test = $_SESSION['ID']; //on recupere l'id de l'utilisateur connecté
 
 $sql = "SELECT * FROM utilisateur WHERE ID = '$test'";
     $result = mysqli_query($db_handle, $sql) ;
 
+    //on recuppere son type
     while($data = mysqli_fetch_assoc($result))
     {
         $Type = $data['Type'];
-
-
+      
+ 
     }
-    }
 
-     
-
-     $_SESSION['Connect'] = $testSession;
+    
 
 
 
@@ -102,6 +90,7 @@ $sql = "SELECT * FROM utilisateur WHERE ID = '$test'";
     	<header>
     		<a href="Page d'accueil.php"><img src="LOGOprojet.png" alt="Market place Logo" width="500"></a>
     	</header>
+        
         <div class="nav-bar">
             <a href="Page d'accueil.php">Accueil</a>
             <a href="parcourir.html">Tout parcourir</a>
@@ -109,29 +98,28 @@ $sql = "SELECT * FROM utilisateur WHERE ID = '$test'";
             <a href="panier.html">Panier</a>
            <?php 
            
-           if($_SESSION['Connect'] == 0)
+            if($Type == "acheteur")
+            {
+                
+                echo '<a href="compteAcheteur.php">Mon compte</a>';
+            }
+            elseif($Type == "vendeur")
+            {
+                echo '<a href="compteVendeur.php">Mon compte</a>';
+            }
+            elseif($Type == "admin")
+            {
+                echo '<a href="compteAdmin.php">Mon compte</a>';
+            } 
+            else
             {
                 
                 echo '<a href="compte.php">Mon compte</a>';
                 
             }
-            else
-            {
-                if($Type == "acheteur")
-                
-            {
-                
-                echo '<a href="compteAcheteur.php">Mon compte</a>';
-            }
-            if($Type == "vendeur")
-            {
-                echo '<a href="compteVendeur.php">Mon compte</a>';
-            }
-            if($Type == "admin")
-            {
-                echo '<a href="compteAdmin.php">Mon compte</a>';
-            }
-             }?>
+            
+            
+             ?>
         </div>
         <div id="carrousel" >
             <ul>
