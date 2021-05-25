@@ -134,10 +134,21 @@ $EmailA ='';
                 </table>
                 </form>
                 <!-- Affichage de l'utilisateur recherché-->
-                <td><?php echo $IDA ?></td>
-                <td><?php echo $TypeA ?></td>
-                <td><?php echo $PseudoA ?></td>
-                <td><?php echo $EmailA ?></td>
+                <table border="1">
+                <tr>
+                    <th>ID</th>
+                    <th>Type</th>
+                    <th>Pseudo</th>
+                    <th>Mail</th>
+                    </tr>
+                    <tr>
+                    <td align="center"><?php echo $IDA ?></td>
+                    <td align="center"><?php echo $TypeA ?></td>
+                    <td align="center"><?php echo $PseudoA ?></td>
+                    <td align="center"><?php echo $EmailA ?></td>
+                    </tr>
+               </table>
+
                 <?php 
                 $IDA ='';
                 $TypeA ='';
@@ -148,15 +159,42 @@ $EmailA ='';
             </div>
           
             <div class="col">
-              
-            <input type="text" name="ID" placeholder="ID"><br>
-                <input type="radio" id="upgrade" name="action" value="upgrade">
+              <form method="POST" action ="<?php
+                    $ID = isset($_POST["ID"]) ? $_POST["ID"] : "";
+                    $choice = isset($_POST["action"]) ? $_POST["action"] : "";
+                        if (empty($choice)) {
+                         $choice = 0;
+                        }
+                    $choice = (int)$choice;
+
+                    switch ($choice) {
+                        case 1:
+
+                            $sql = "UPDATE utilisateur SET Type = 'vendeur' WHERE ID = '$ID' ";
+                          break;
+                        case 2:
+                          $sql = "UPDATE utilisateur SET Type = 'acheteur' WHERE ID = '$ID'";
+                          break;
+                        case 3:
+                          $sql = "DELETE FROM utilisateur WHERE ID = '$ID'";
+                          break;
+                        
+                        }
+
+                        $result = mysqli_query($db_handle, $sql) ;
+
+
+
+                ?>">
+                <input type="text" name="ID" placeholder="ID"><br>
+                <input type="radio" id="upgrade" name="action" value="1">
                 <label for="upgrade">Mettre le statut Vendeur</label><br>
-                <input type="radio" id="downgrade" name="action" value="downgrade">
+                <input type="radio" id="downgrade" name="action" value="2">
                 <label for="downgrade">Mettre le statut Acheteur</label><br>
-                <input type="radio" id="supp" name="action" value="other">
+                <input type="radio" id="supp" name="action" value="3">
                 <label for="suppr">Supprimer le compte</label><br>
                 <button type="submit" name="button1" value="valider">Valider</button>
+              </form>
             </div>
             
             <div class="col">

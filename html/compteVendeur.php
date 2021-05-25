@@ -53,7 +53,7 @@ else{
         
         <div class="nav-bar">
             <a href="Page d'accueil.php">Accueil</a>
-            <a href="parcourir.html">Produits</a>
+            <a href="parcourir.php">Produits</a>
             <a href="notification.html">Notification</a>
             <a href="panier.html">Panier</a>
             <a href="deconnexion.html">Se deconnecter</a>

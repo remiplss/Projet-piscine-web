@@ -93,7 +93,7 @@ $sql = "SELECT * FROM utilisateur WHERE ID = '$test'";
         
         <div class="nav-bar">
             <a href="Page d'accueil.php">Accueil</a>
-            <a href="parcourir.html">Tout parcourir</a>
+            <a href="parcourir.php">Tout parcourir</a>
             <a href="notification.html">Notification</a>
             <a href="panier.html">Panier</a>
            <?php 

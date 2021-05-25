@@ -1,3 +1,21 @@
+<?php
+
+//debut de session
+session_start();
+
+//Connexion a la db
+$database = "projet web";
+
+$db_handle = mysqli_connect('localhost', 'root', '');
+$db_found = mysqli_select_db($db_handle, $database);
+
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +28,7 @@
 			height: 50%;
 			border: 1px solid #ddd;
 			overflow: auto;
+			padding-bottom: 10%;
 		}
 
 		th {
@@ -34,14 +53,14 @@
 </head>
 <body>
 	<header>
-		<a href="Page d'accueil.html"><img src="LOGOprojet.png" alt="Market place Logo" width="500"></a>
+		<a href="Page d'accueil.php"><img src="LOGOprojet.png" alt="Market place Logo" width="500"></a>
 	</header>
 	<div class="nav-bar">
-		<a href="Page d'accueil.html">Accueil</a>
+		<a href="Page d'accueil.php">Accueil</a>
 		<a href="parcourir.html">Tout parcourir</a>
 		<a href="notification.html">Notification</a>
 		<a href="panier.html">Panier</a>
-		<a href="compte.html">Mon compte</a>
+		<a href="compte.php">Mon compte</a>
 	</div>
 	<table id="myTable">
 		<tr>  
@@ -50,11 +69,13 @@
 			<th onclick="sortTable(2)">Prix de départ</th>
 			<th onclick="sortTable(3)">Prix d'achat immédiat</th>
 		</tr>
-		<tr>
+		<tr >
+			<a href = "produit.php" style="display:block;width:100%;height:100%;">
 			<th><img src="test1.jpg" alt="Item1" height="100"></th>
-			<td>Texas TI N-Spire</td>
+			<td>  Texas TI N-Spire  </td>
 			<td>57.90</td>
 			<td>133.50</td>
+			</a>
 		</tr>
 		<tr>
 			<th><img src="test2.jpg" alt="Item2" height="100"></th>
@@ -74,7 +95,9 @@
 			<td>175.00</td>
 			<td>299.00</td>
 		</tr>
+		
 	</table>
+	
 	<div class="footer">
 			<p>Copyright &copy; 2021 ECE MarketPlace
 			<a href="contact.html">Contact</a></p>
