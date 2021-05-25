@@ -70,12 +70,12 @@ $db_found = mysqli_select_db($db_handle, $database);
 			<th onclick="sortTable(3)">Prix d'achat immédiat</th>
 		</tr>
 		<tr >
-			<a href = "produit.php" style="display:block;width:100%;height:100%;">
-			<th><img src="test1.jpg" alt="Item1" height="100"></th>
-			<td>  Texas TI N-Spire  </td>
-			<td>57.90</td>
-			<td>133.50</td>
-			</a>
+			
+			<th><a href = "produit.php" style="display:block;width:100%;height:100%;"><img src="test1.jpg" alt="Item1" height="100"></a></th>
+			<td> <a href = "produit.php" style="display:block;width:100%;height:100%;"> Texas TI N-Spire </a> </td>
+			<td><a href = "produit.php" style="display:block;width:100%;height:100%;">57.90</a></td>
+			<td><a href = "produit.php" style="display:block;width:100%;height:100%;">133.50</a></td>
+			
 		</tr>
 		<tr>
 			<th><img src="test2.jpg" alt="Item2" height="100"></th>

@@ -34,8 +34,7 @@ $sql = "SELECT * FROM utilisateur WHERE ID = '$test'";
 <html>
     <head>
         <meta charset="utf-8">        
-        <link rel="stylesheet" type="text/css" href="compte.css">
-=======
+        
         <link rel="stylesheet" type="text/css" href="format.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type="text/javascript">
