@@ -12,6 +12,7 @@ $db_found = mysqli_select_db($db_handle, $database);
 $sql = "SELECT COUNT(*) FROM produits";
 $result = mysqli_query($db_handle, $sql) ;
 
+//nombre de produits
 $rows = mysqli_num_rows($result);
 
 ?>
