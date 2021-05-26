@@ -1,50 +1,55 @@
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body{
     background: #f3e0e2;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	font-family: 'Montserrat', sans-serif;
-	height: 100vh;
-	margin: -20px 0 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    margin: -20px 0 50px;
 }
 
 a {
-	color: #333;
-	font-size: 14px;
-	text-decoration: none;
-	margin: 15px 0;
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
 }
 
 input {
-    height: 2.5em; /* pour IE */
-    vertical-align: middle; /* optionnel mais donne meilleur aspect pour IE */
+    height: 2.5em; /* pour IE /
+    vertical-align: middle; / optionnel mais donne meilleur aspect pour IE /
 }
 
 button {
-	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
-	color: #FFFFFF;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 12px 45px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: transform 80ms ease-in;
+    border-radius: 20px;
+    border: 1px solid #FF4B2B;
+    background-color: #FF4B2B;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+
+form{
+    height:200px;
+    overflow: auto;
 }
 
 .col-container {
-    display: table; /* Make the container element behave like a table */
-    width: 100%; /* Set full-width to expand the whole page */
+    display: table; / Make the container element behave like a table /
+    width: 100%; / Set full-width to expand the whole page /
 }
 
 .col {
-    display: table-cell; /* Make elements inside the container behave like table cells */
+    display: table-cell; / Make elements inside the container behave like table cells */
 }
 
 #footer {
@@ -79,5 +84,5 @@ padding: 10px;
 
 
 .footerstyle {
-	text-align: center;
+    text-align: center;
 }

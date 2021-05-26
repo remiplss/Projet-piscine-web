@@ -11,7 +11,9 @@ $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
 
 //A changer!!!!!
-$ID = 1;
+$ID = isset($_POST["ligne"]) ? $_POST["ligne"] : "";
+
+echo "<script>alert(\"$ID\")</script>";
 
 
 $sql = "SELECT * FROM produits WHERE ID = '$ID'";
@@ -26,10 +28,10 @@ while($data = mysqli_fetch_assoc($result))
     $Prix_Debut = $data['Prix_Debut'];
     $Vendeur = $data['Vendeur'];
 
-
+   
 }
 
-$Meilleure_offre = $Prix_Debut;
+
 
 ?>
 

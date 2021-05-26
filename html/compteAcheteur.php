@@ -31,6 +31,7 @@ while($data = mysqli_fetch_assoc($result2))
     $_SESSION['Nom_Carte'] = $data['Nom_Carte'];
     $_SESSION['Date_expiration'] = $data['Date_expiration'];
     $_SESSION['Code'] = $data['Code'];
+    $pdp = $data['pdp'];
 
 
 }
@@ -55,19 +56,21 @@ else{
         <div class="nav-bar">
             <a href="Page d'accueil.php">Accueil</a>
             <a href="parcourir.php">Produits</a>
-            <a href="notification.html">Notification</a>
-            <a href="panier.html">Panier</a>
+            <a href="notification.php">Notification</a>
+            <a href="panier.php">Panier</a>
             <a href="deconnexion.php">Se deconnecter</a>
         </div>
         
         <div class="col-container">
             <div class="col">
               <h2>Bienvenue: <?php echo $_SESSION['Pseudo'] ?> </h2>
-              <p>AJOUT DE La photo</p>
+              <img src="membre/pdp/<?php echo $pdp; ?>" height="100">
+              
+              
             </div>
           
             <div class="col">
-              <form method="post" action="majInfo.php">
+              <form method="post" action="majInfo.php" enctype="multipart/form-data">
                         <h2>Mettre à jour mes informations</h2>
                         <input type="text" value="<?php echo $_SESSION['Nom'] ?>" name="nom" placeholder="Nom" />
 						<input type="text" value="<?php echo $_SESSION['Prenom'] ?>" name="prenom" placeholder="Prénom" />
@@ -91,9 +94,12 @@ else{
                         <input type="nom_carte" value="<?php echo $_SESSION['Nom_Carte'] ?>" name="nomCart" placeholder="Titulaire de la carte" />
                         <br><br>
                         <input type="text" value="<?php echo $_SESSION['Date_expiration'] ?>" name="exp" placeholder="Date d'exp" />
-                        <input type="number" value="<?php echo $_SESSION['Code'] ?>" name="ccv" placeholder="CCV" />
+                        <input type="number" value="<?php echo $_SESSION['Code'] ?>" name="ccv" placeholder="CCV" /><br><br>
+                        <label>Photo de profil: </label><br>
+                        <input type="file" name="pdp">
                         <br><br>
 						<button type="submit" name="modif">Enregistrer</button>
+                        
               </form>
               
             </div>
@@ -103,7 +109,7 @@ else{
         
         <div id="footer"><br>
             	Copyright &copy; 2021 ECE MarketPlace<br>
-            	<a href="contact.html">Contact</a>
+            	<a href="contact.php">Contact</a>
         </div>
         
     </body>

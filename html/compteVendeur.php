@@ -54,9 +54,9 @@ else{
         <div class="nav-bar">
             <a href="Page d'accueil.php">Accueil</a>
             <a href="parcourir.php">Produits</a>
-            <a href="notification.html">Notification</a>
-            <a href="panier.html">Panier</a>
-            <a href="deconnexion.html">Se deconnecter</a>
+            <a href="notification.php">Notification</a>
+            <a href="panier.php">Panier</a>
+            <a href="deconnexion.php">Se deconnecter</a>
         </div>
         
         <div class="col-container">
@@ -127,7 +127,7 @@ else{
         
         <div id="footer"><br>
             	Copyright &copy; 2021 ECE MarketPlace<br>
-            	<a href="contact.html">Contact</a>
+            	<a href="contact.php">Contact</a>
         </div>
         
     </body>

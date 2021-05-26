@@ -5,16 +5,15 @@ session_start();
 
 //Connexion a la db
 $database = "projet web";
-
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
 
-$sql = "SELECT COUNT(*) FROM produits";
+/*$sql = "SELECT COUNT(*) FROM produits";
 $result = mysqli_query($db_handle, $sql) ;
 
 //nombre de produits
 $rows = mysqli_num_rows($result);
-
+$i = 0;*/
 ?>
 
 
@@ -54,6 +53,8 @@ $rows = mysqli_num_rows($result);
 		}
 
 	</style>
+
+	
 </head>
 <body>
 	<header>
@@ -67,38 +68,50 @@ $rows = mysqli_num_rows($result);
 		<a href="compte.php">Mon compte</a>
 	</div>
 	<table id="myTable">
+	
 		<tr>  
 			<th>Aperçu</th>
 			<th onclick="sortTable(1)">Produit</th>
 			<th onclick="sortTable(2)">Prix de départ</th>
 			<th onclick="sortTable(3)">Prix d'achat immédiat</th>
 		</tr>
-		<tr >
+		
+		<?php
+
+		$query = "SELECT * from produits";
+		$result = mysqli_query($db_handle, $query);
+		if(mysqli_num_rows($result) > 0)
+		{
+			//on parcour chaques produits
+  		while($data = mysqli_fetch_array($result))
+  		{
+			  $i = 0;
+			  $i++;
+		?>
+
+		<script>
+
+		</script>
+
+			<!-- on créé  la table pour chaques produits -->
+		<form id="test" action="produit.php" method="post">
+		  <input type="hidden" name="ligne" value="<?php echo $i;?>"/>
+		  test id <?php echo $i;?>
+			<tr>
 			
-			<th><a href = "produit.php" style="display:block;width:100%;height:100%;"><img src="test1.jpg" alt="Item1" height="100"></a></th>
-			<td> <a href = "produit.php" style="display:block;width:100%;height:100%;"> Texas TI N-Spire </a> </td>
-			<td><a href = "produit.php" style="display:block;width:100%;height:100%;">57.90</a></td>
-			<td><a href = "produit.php" style="display:block;width:100%;height:100%;">133.50</a></td>
+				<td><a href = "#" onclick='document.getElementById("test").submit()' style="display:block;width:100%;height:100%;"onclick='document.getElementById("test").submit()'><img src="<?php echo $data['Image'];?>" alt="Item1" height="100"></a></td>
+				<td><a href = "#" onclick='document.getElementById("test").submit()' style="display:block;width:100%;height:100%;"> <?php echo $data['Nom'];?> </a> </td>
+				<td><a href = "#" onclick='document.getElementById("test").submit()' style="display:block;width:100%;height:100%;"><?php echo $data['Prix_Debut'];?>€</a></td>
+				<td><a href = "#" onclick='document.getElementById("test").submit()' style="display:block;width:100%;height:100%;"><?php echo $data['Prix_Direct'];?>€</a></td>
 			
-		</tr>
-		<tr>
-			<th><img src="test2.jpg" alt="Item2" height="100"></th>
-			<td>Kit PCB Cuivre DIY</td>
-			<td>9.00</td>
-			<td>16.00</td>
-		</tr>
-		<tr>
-			<th><img src="test3.jpg" alt="Item3" height="100"></th>
-			<td>Arduino Uno + Câbles</td>
-			<td>25.55</td>
-			<td>47.76</td>
-		</tr>
-		<tr>
-			<th><img src="test4.jpg" alt="Item4" height="100"></th>
-			<td>ASUS E406MA-BV901TS - 14.0" - Neuf</td>
-			<td>175.00</td>
-			<td>299.00</td>
-		</tr>
+			</tr>
+		</form>
+
+			<?php
+		  }
+		}
+			?>
+
 		
 	</table>
 	
@@ -181,6 +194,12 @@ $rows = mysqli_num_rows($result);
   				}
 			}	
 		}
+
+		function buffID(ID)
+		{
+
+		}
+
 	</script>
 </body>
 </html>

@@ -30,9 +30,41 @@ $sql = "UPDATE info_client SET Nom = '$Nom',Prenom = '$Prenom',Adresse_1 = '$Add
 
         $result = mysqli_query($db_handle, $sql) or die('impossible d’ajouter cet enregistrement : ' . mysqli_error($db_handle));
         
+
+//DEPOT DU LA PHOTO DE PROFIL
+        
+                $tailleMax =2097152;
+                $extensionValide= array('jpg','gif','png','jpeg');
+                if($_FILES['pdp']['size'] <= $tailleMax){
+                       
+                       $extensionUpload = strtolower(substr(strrchr($_FILES['pdp']['name'],'.'), 1)); 
+                        if(in_array($extensionUpload , $extensionValide)){
+                            
+                            $chemin= "membre/pdp/".$_SESSION['ID'].".".$extensionUpload;
+                            $deplacement = move_uploaded_file($_FILES['pdp']['tmp_name'], $chemin);
+                            if($deplacement){
+                                
+                                $nomFichier = $id.".".$extensionUpload;
+                                $req = "UPDATE info_client SET pdp = '$nomFichier'";
+                                $conreq = mysqli_query($db_handle,$req) or die('impossible d’ajouter cet enregistrement : ' . mysqli_error($db_handle));
+                            }
+                            else
+                            {
+                                echo "erreur interne";    
+                            }
+                        }
+                        else{
+                                echo "Extension non acceptée";
+                        }
+                }
+                else{
+                        echo "Fichier trop volumineux";
+                }
+        
+        
         if($result){
         //ouverture de la page d'accueil
-        header('Location: compteVendeur.php');
+        header('Location: compteAcheteur.php');
         mysqli_close($db_handle);
         }
 
